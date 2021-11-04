@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/intl.dart';
 
+import 'clockview.dart';
 import '../main.dart';
 
 class AlarmPage extends StatefulWidget {
@@ -50,6 +51,9 @@ class _AlarmPageState extends State<AlarmPage> {
                 fontWeight: FontWeight.w700,
                 color: CustomColors.primaryTextColor,
                 fontSize: 24),
+          ),
+          ClockView(
+            size: MediaQuery.of(context).size.height / 4,
           ),
           Expanded(
             child: FutureBuilder<List<AlarmInfo>>(
@@ -287,7 +291,7 @@ class _AlarmPageState extends State<AlarmPage> {
       'alarm_notif',
       'Channel for Alarm notification',
       icon: 'codex_logo',
-      sound: RawResourceAndroidNotificationSound('a_long_cold_sting'),
+      sound: RawResourceAndroidNotificationSound('beep_cropped'),
       largeIcon: DrawableResourceAndroidBitmap('codex_logo'),
     );
 

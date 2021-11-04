@@ -19,19 +19,21 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: CustomColors.pageBackgroundColor,
       body: Row(
         children: <Widget>[
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: menuItems
-                .map((currentMenuInfo) => buildMenuButton(currentMenuInfo))
-                .toList(),
-          ),
-          VerticalDivider(
-            color: CustomColors.dividerColor,
-            width: 1,
-          ),
+          // Column(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: menuItems
+          //       .map((currentMenuInfo) => buildMenuButton(currentMenuInfo))
+          //       .toList(),
+          // ),
+          // VerticalDivider(
+          //   color: CustomColors.dividerColor,
+          //   width: 1,
+          // ),
           Expanded(
             child: Consumer<MenuInfo>(
               builder: (BuildContext context, MenuInfo value, Widget child) {
+                return AlarmPage();
+                
                 if (value.menuType == MenuType.clock)
                   return ClockPage();
                 else if (value.menuType == MenuType.alarm)
